@@ -21,6 +21,7 @@
 #include <QMap>
 #include <QMetaType>
 #include <QPair>
+#include <QtQml/qqmlregistration.h>
 #include <QString>
 #include <QStringList>
 #include "../../util/btassert.h"
@@ -305,3 +306,19 @@ Q_DECLARE_METATYPE(QList<int>)
 inline BtConfig & btConfig() {
     return BtConfig::getInstance();
 }
+
+namespace BibleTimeConfig {
+  Q_NAMESPACE
+
+  constexpr int maxColumns = 10;
+
+  Q_CLASSINFO("maxColumns", "10")
+}
+
+struct BibleTimeConfigRegistration
+{
+  Q_GADGET
+  QML_FOREIGN_NAMESPACE(BibleTimeConfig)             // Links this metadata structure to your namespace
+  QML_NAMED_ELEMENT(BibleTimeConfig)       // Exposes it to QML as "AppConfig"
+  QML_UNCREATABLE("Cannot create an instance of AppConfig")
+};
