@@ -359,11 +359,11 @@ QString BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
 }
 
 static int getColumnFromRole(int role) {
-    if (role >= ModuleEntry::Text0Role && role <= ModuleEntry::Text9Role)
+    if (role >= ModuleEntry::Text0Role && role <= ModuleEntry::Text19Role)
         return role - ModuleEntry::Text0Role;
-    if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title9Role)
+    if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title19Role)
         return role - ModuleEntry::Title0Role;
-    if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit9Role)
+    if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit19Role)
         return role - ModuleEntry::Edit0Role;
     return 0;
 }
@@ -373,7 +373,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
     CSwordVerseKey key = indexToVerseKey(row);
     int verse = key.verse();
 
-    if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Edit9Role) {
+    if (role >= ModuleEntry::TextRole && role <= ModuleEntry::Edit19Role) {
         if (verse == 0)
             return QString();
 
@@ -398,7 +398,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             mKey.setKey(key.key());
 
             // Title only for verse 1 of Personal commentary
-            if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title9Role) {
+            if (role >= ModuleEntry::Title0Role && role <= ModuleEntry::Title19Role) {
                 if (module->isWritable() && verse == 1)
                     return QStringLiteral("<center><h3>%1</h3></center>")
                             .arg(chapterTitle);
@@ -406,7 +406,7 @@ QString BtModuleTextModel::verseData(const QModelIndex & index, int role) const 
             }
 
             // Personal commentary
-            if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit9Role)
+            if (role >= ModuleEntry::Edit0Role && role <= ModuleEntry::Edit19Role)
                 return mKey.rawText();
             if (module->isWritable()) {
                 auto const & rawText = mKey.rawText();
@@ -465,6 +465,16 @@ QHash<int, QByteArray> BtModuleTextModel::roleNames() const {
                 r[ModuleEntry::Text7Role] = "text7";       // text in column 7
                 r[ModuleEntry::Text8Role] = "text8";       // text in column 8
                 r[ModuleEntry::Text9Role] = "text9";       // text in column 9
+                r[ModuleEntry::Text10Role] = "text10";       // text in column 10
+                r[ModuleEntry::Text11Role] = "text11";       // text in column 11
+                r[ModuleEntry::Text12Role] = "text12";       // text in column 12
+                r[ModuleEntry::Text13Role] = "text13";       // text in column 13
+                r[ModuleEntry::Text14Role] = "text14";       // text in column 14
+                r[ModuleEntry::Text15Role] = "text15";       // text in column 15
+                r[ModuleEntry::Text16Role] = "text16";       // text in column 16
+                r[ModuleEntry::Text17Role] = "text17";       // text in column 17
+                r[ModuleEntry::Text18Role] = "text18";       // text in column 18
+                r[ModuleEntry::Text19Role] = "text19";       // text in column 19
                 r[ModuleEntry::Title0Role] = "title0";     // title in column 0
                 r[ModuleEntry::Title1Role] = "title1";     // title in column 1
                 r[ModuleEntry::Title2Role] = "title2";     // title in column 2
@@ -475,6 +485,16 @@ QHash<int, QByteArray> BtModuleTextModel::roleNames() const {
                 r[ModuleEntry::Title7Role] = "title7";     // title in column 7
                 r[ModuleEntry::Title8Role] = "title8";     // title in column 8
                 r[ModuleEntry::Title9Role] = "title9";     // title in column 9
+                r[ModuleEntry::Title10Role] = "title10";     // title in column 10
+                r[ModuleEntry::Title11Role] = "title11";     // title in column 11
+                r[ModuleEntry::Title12Role] = "title12";     // title in column 12
+                r[ModuleEntry::Title13Role] = "title13";     // title in column 13
+                r[ModuleEntry::Title14Role] = "title14";     // title in column 14
+                r[ModuleEntry::Title15Role] = "title15";     // title in column 15
+                r[ModuleEntry::Title16Role] = "title16";     // title in column 16
+                r[ModuleEntry::Title17Role] = "title17";     // title in column 17
+                r[ModuleEntry::Title18Role] = "title18";     // title in column 18
+                r[ModuleEntry::Title19Role] = "title19";     // title in column 19
                 return r;
             }();
     return roleNames_;
@@ -617,7 +637,7 @@ bool BtModuleTextModel::setData(
         const QModelIndex &index,
         const QVariant &value,
         int role) {
-    if (role < ModuleEntry::Edit0Role || role > ModuleEntry::Edit9Role)
+    if (role < ModuleEntry::Edit0Role || role > ModuleEntry::Edit19Role)
         return false;
     auto const & module = *m_moduleInfoList.at(getColumnFromRole(role));
     CSwordVerseKey mKey(indexToVerseKey(index.row(), module));
