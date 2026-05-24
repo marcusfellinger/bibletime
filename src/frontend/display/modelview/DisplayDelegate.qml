@@ -20,17 +20,8 @@ Item {
     property int vertSpace: 1 * BtQmlInterface.pixelsPerMM
     property bool updating: false
     required property int index
-    required property string title0
-    required property string title1
-    required property string title2
-    required property string title3
-    required property string title4
-    required property string title5
-    required property string title6
-    required property string title7
-    required property string title8
-    required property string title9
     property var texts: Array(BibleTimeConfig::maxColumns).fill("")
+    property var titles: Array(BibleTimeConfig::maxColumns).fill("")
 
     function positionAt(x, y, column) {
         var columnViewItem = getColumnItem(column);
@@ -104,7 +95,7 @@ Item {
         id: columnView0
         property int column: 0
         property string displayText: texts[0]
-        property string displayTitle: title0
+        property string displayTitle: titles[0]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
@@ -117,7 +108,7 @@ Item {
         id: columnView1
         property int column: 1
         property string displayText: texts[1]
-        property string displayTitle: title1
+        property string displayTitle: titles[1]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
@@ -130,7 +121,7 @@ Item {
         id: columnView2
         property int column: 2
         property string displayText: texts[2]
-        property string displayTitle: title2
+        property string displayTitle: titles[2]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
@@ -143,7 +134,7 @@ Item {
         id: columnView3
         property int column: 3
         property string displayText: texts[3]
-        property string displayTitle: title3
+        property string displayTitle: titles[3]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView2.right
@@ -156,7 +147,7 @@ Item {
         id: columnView4
         property int column: 4
         property string displayText: texts[4]
-        property string displayTitle: title4
+        property string displayTitle: titles[4]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView3.right
@@ -169,7 +160,7 @@ Item {
         id: columnView5
         property int column: 5
         property string displayText: texts[5]
-        property string displayTitle: title5
+        property string displayTitle: titles[5]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView4.right
@@ -182,7 +173,7 @@ Item {
         id: columnView6
         property int column: 6
         property string displayText: texts[6]
-        property string displayTitle: title6
+        property string displayTitle: titles[6]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView5.right
@@ -195,7 +186,7 @@ Item {
         id: columnView7
         property int column: 7
         property string displayText: texts[7]
-        property string displayTitle: title7
+        property string displayTitle: titles[7]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView6.right
@@ -208,7 +199,7 @@ Item {
         id: columnView8
         property int column: 8
         property string displayText: texts[8]
-        property string displayTitle: title8
+        property string displayTitle: titles[8]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView7.right
@@ -221,7 +212,7 @@ Item {
         id: columnView9
         property int column: 9
         property string displayText: texts[9]
-        property string displayTitle: title9
+        property string displayTitle: titles[9]
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView8.right
