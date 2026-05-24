@@ -283,7 +283,7 @@ void BtQmlInterface::getFontsFromSettings() {
         newFonts.append(btConfig().getDefaultFont());
     }
     m_fonts = std::move(newFonts);
-    Q_EMIT fontChanged();
+    Q_EMIT fontsChanged();
 }
 
 void BtQmlInterface::setBibleKey(const QString& link) {
@@ -345,16 +345,7 @@ QFont BtQmlInterface::font(int column) const {
     return QApplication::font();
 }
 
-QFont BtQmlInterface::getFont0() const { return font(0); }
-QFont BtQmlInterface::getFont1() const { return font(1); }
-QFont BtQmlInterface::getFont2() const { return font(2); }
-QFont BtQmlInterface::getFont3() const { return font(3); }
-QFont BtQmlInterface::getFont4() const { return font(4); }
-QFont BtQmlInterface::getFont5() const { return font(5); }
-QFont BtQmlInterface::getFont6() const { return font(6); }
-QFont BtQmlInterface::getFont7() const { return font(7); }
-QFont BtQmlInterface::getFont8() const { return font(8); }
-QFont BtQmlInterface::getFont9() const { return font(9); }
+QList<QFont> BtQmlInterface::getFonts() const { return m_fonts; }
 
 QVariant BtQmlInterface::getTextModel() {
     QVariant var;

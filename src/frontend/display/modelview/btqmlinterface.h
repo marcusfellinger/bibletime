@@ -44,16 +44,7 @@ class BtQmlInterface : public QObject {
     Q_PROPERTY(int          contextMenuIndex        READ getContextMenuIndex NOTIFY contextMenuIndexChanged WRITE setContextMenuIndex)
     Q_PROPERTY(int          contextMenuColumn       READ getContextMenuColumn NOTIFY contextMenuColumnChanged WRITE setContextMenuColumn)
     Q_PROPERTY(int          currentModelIndex       READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
-    Q_PROPERTY(QFont        font0                   READ getFont0   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font1                   READ getFont1   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font2                   READ getFont2   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font3                   READ getFont3   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font4                   READ getFont4   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font5                   READ getFont5   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font6                   READ getFont6   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font7                   READ getFont7   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font8                   READ getFont8   NOTIFY fontChanged)
-    Q_PROPERTY(QFont        font9                   READ getFont9   NOTIFY fontChanged)
+    Q_PROPERTY(QList<QFont> fonts                   READ getFonts NOTIFY fontsChanged)
     Q_PROPERTY(QColor       foregroundColor         READ getForegroundColor NOTIFY foregroundColorChanged)
     Q_PROPERTY(int          numModules              READ getNumModules NOTIFY numModulesChanged)
     Q_PROPERTY(double       pixelsPerMM             READ getPixelsPerMM NOTIFY pixelsPerMMChanged)
@@ -113,16 +104,7 @@ public:
     int getContextMenuIndex() const;
     int getContextMenuColumn() const;
     int getCurrentModelIndex() const;
-    QFont getFont0() const;
-    QFont getFont1() const;
-    QFont getFont2() const;
-    QFont getFont3() const;
-    QFont getFont4() const;
-    QFont getFont5() const;
-    QFont getFont6() const;
-    QFont getFont7() const;
-    QFont getFont8() const;
-    QFont getFont9() const;
+    QList<QFont> getFonts() const;
     CSwordKey* getMouseClickedKey() const;
     QString getLemmaFromLink(const QString& url);
     int getNumModules() const;
@@ -156,7 +138,7 @@ Q_SIGNALS:
     void contextMenuIndexChanged();
     void contextMenuColumnChanged();
     void currentModelIndexChanged();
-    void fontChanged();
+    void fontsChanged();
     void foregroundColorChanged();
     void numModulesChanged();
     void pixelsPerMMChanged();
