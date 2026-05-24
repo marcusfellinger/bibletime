@@ -20,16 +20,6 @@ Item {
     property int vertSpace: 1 * BtQmlInterface.pixelsPerMM
     property bool updating: false
     required property int index
-    required property string text0
-    required property string text1
-    required property string text2
-    required property string text3
-    required property string text4
-    required property string text5
-    required property string text6
-    required property string text7
-    required property string text8
-    required property string text9
     required property string title0
     required property string title1
     required property string title2
@@ -40,6 +30,7 @@ Item {
     required property string title7
     required property string title8
     required property string title9
+    property var texts: Array(BibleTimeConfig::maxColumns).fill("")
 
     function positionAt(x, y, column) {
         var columnViewItem = getColumnItem(column);
@@ -112,7 +103,7 @@ Item {
     ColumnItem {
         id: columnView0
         property int column: 0
-        property string displayText: text0
+        property string displayText: texts[0]
         property string displayTitle: title0
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -125,7 +116,7 @@ Item {
     ColumnItem {
         id: columnView1
         property int column: 1
-        property string displayText: text1
+        property string displayText: texts[1]
         property string displayTitle: title1
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -138,7 +129,7 @@ Item {
     ColumnItem {
         id: columnView2
         property int column: 2
-        property string displayText: text2
+        property string displayText: texts[2]
         property string displayTitle: title2
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -151,7 +142,7 @@ Item {
     ColumnItem {
         id: columnView3
         property int column: 3
-        property string displayText: text3
+        property string displayText: texts[3]
         property string displayTitle: title3
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -164,7 +155,7 @@ Item {
     ColumnItem {
         id: columnView4
         property int column: 4
-        property string displayText: text4
+        property string displayText: texts[4]
         property string displayTitle: title4
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -177,7 +168,7 @@ Item {
     ColumnItem {
         id: columnView5
         property int column: 5
-        property string displayText: text5
+        property string displayText: texts[5]
         property string displayTitle: title5
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -190,7 +181,7 @@ Item {
     ColumnItem {
         id: columnView6
         property int column: 6
-        property string displayText: text6
+        property string displayText: texts[6]
         property string displayTitle: title6
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -203,7 +194,7 @@ Item {
     ColumnItem {
         id: columnView7
         property int column: 7
-        property string displayText: text7
+        property string displayText: texts[7]
         property string displayTitle: title7
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -216,7 +207,7 @@ Item {
     ColumnItem {
         id: columnView8
         property int column: 8
-        property string displayText: text8
+        property string displayText: texts[8]
         property string displayTitle: title8
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
@@ -229,7 +220,7 @@ Item {
     ColumnItem {
         id: columnView9
         property int column: 9
-        property string displayText: text9
+        property string displayText: texts[9]
         property string displayTitle: title9
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
