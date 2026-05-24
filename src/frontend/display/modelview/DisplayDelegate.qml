@@ -92,7 +92,10 @@ Item {
         var h = 30;
         var i;
         for (i = 0; i < listView.columns; ++i) {
-            h = Math.max(getColumnItem(i).minHeight(), h);
+            let columnItem = getColumnItem(i);
+            if (columnItem) {
+                h = Math.max(columnItem.minHeight(), h);
+            }
         }
         return h + vertSpace;
     }
