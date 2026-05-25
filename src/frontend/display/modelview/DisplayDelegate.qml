@@ -99,7 +99,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
-        font: BtQmlInterface.fonts[0]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 0) ? BtQmlInterface.fonts[0] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -112,7 +112,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
-        font: BtQmlInterface.fonts[1]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 1) ? BtQmlInterface.fonts[1] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -125,7 +125,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
-        font: BtQmlInterface.fonts[2]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 2) ? BtQmlInterface.fonts[2] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -138,7 +138,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView2.right
-        font: BtQmlInterface.fonts[3]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 3) ? BtQmlInterface.fonts[3] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -151,7 +151,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView3.right
-        font: BtQmlInterface.fonts[4]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 4) ? BtQmlInterface.fonts[4] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -164,7 +164,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView4.right
-        font: BtQmlInterface.fonts[5]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 5) ? BtQmlInterface.fonts[5] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -177,7 +177,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView5.right
-        font: BtQmlInterface.fonts[6]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 6) ? BtQmlInterface.fonts[6] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -190,7 +190,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView6.right
-        font: BtQmlInterface.fonts[7]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 7) ? BtQmlInterface.fonts[7] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -203,7 +203,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView7.right
-        font: BtQmlInterface.fonts[8]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 8) ? BtQmlInterface.fonts[8] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -216,7 +216,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView8.right
-        font: BtQmlInterface.fonts[9]
+        font: (typeof BtQmlInterface.fonts !== 'undefined' && BtQmlInterface.fonts.length > 9) ? BtQmlInterface.fonts[9] : Qt.font({family: "serif", pointSize: 12})
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }

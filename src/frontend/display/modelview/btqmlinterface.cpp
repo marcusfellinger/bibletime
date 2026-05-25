@@ -40,7 +40,9 @@
 BtQmlInterface::BtQmlInterface(QObject * parent)
     : QObject(parent)
     , m_moduleTextModel(new BtModuleTextModel(this))
-{}
+{
+    getFontsFromSettings();
+}
 
 BtQmlInterface::~BtQmlInterface() = default;
 
@@ -267,7 +269,7 @@ void BtQmlInterface::settingsChanged() {
 
 void BtQmlInterface::getFontsFromSettings() {
     decltype(m_fonts) newFonts;
-    newFonts.reserve(m_moduleNames.size());
+    newFonts.reserve(std::max<int>(m_moduleNames.size(), 10));
     for (auto const & moduleName : m_moduleNames) {
         if (auto const * const m =
                     CSwordBackend::instance().findModuleByName(moduleName))
@@ -280,6 +282,9 @@ void BtQmlInterface::getFontsFromSettings() {
                 }
             }
         }
+        newFonts.append(btConfig().getDefaultFont());
+    }
+    while (newFonts.size() < 10) {
         newFonts.append(btConfig().getDefaultFont());
     }
     m_fonts = std::move(newFonts);
