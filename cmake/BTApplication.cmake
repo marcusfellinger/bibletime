@@ -93,6 +93,7 @@ TARGET_INCLUDE_DIRECTORIES("bibletime" PRIVATE
 
     # work around QTBUG-87221/QTBUG-93443:
     "${CMAKE_CURRENT_SOURCE_DIR}/src/frontend/display/modelview/"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/backend/config/"
 )
 TARGET_LINK_LIBRARIES("bibletime" PRIVATE
     PkgConfig::CLucene

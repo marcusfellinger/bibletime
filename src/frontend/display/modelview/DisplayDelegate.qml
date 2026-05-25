@@ -20,8 +20,8 @@ Item {
     property int vertSpace: 1 * BtQmlInterface.pixelsPerMM
     property bool updating: false
     required property int index
-    property var texts: Array(BibleTimeConfig::maxColumns).fill("")
-    property var titles: Array(BibleTimeConfig::maxColumns).fill("")
+    property var texts: Array(BibleTimeConfig.maxColumns).fill("")
+    property var titles: Array(BibleTimeConfig.maxColumns).fill("")
 
     function positionAt(x, y, column) {
         var columnViewItem = getColumnItem(column);
