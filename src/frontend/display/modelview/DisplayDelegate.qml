@@ -99,7 +99,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: delegate.left
-        font: BtQmlInterface.getFonts()[0]
+        font: BtQmlInterface.fonts[0]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -112,7 +112,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView0.right
-        font: BtQmlInterface.getFonts()[1]
+        font: BtQmlInterface.fonts[1]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -125,7 +125,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView1.right
-        font: BtQmlInterface.getFonts()[2]
+        font: BtQmlInterface.fonts[2]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -138,7 +138,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView2.right
-        font: BtQmlInterface.getFonts()[3]
+        font: BtQmlInterface.fonts[3]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -151,7 +151,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView3.right
-        font: BtQmlInterface.getFonts()[4]
+        font: BtQmlInterface.fonts[4]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -164,7 +164,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView4.right
-        font: BtQmlInterface.getFonts()[5]
+        font: BtQmlInterface.fonts[5]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -177,7 +177,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView5.right
-        font: BtQmlInterface.getFonts()[6]
+        font: BtQmlInterface.fonts[6]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -190,7 +190,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView6.right
-        font: BtQmlInterface.getFonts()[7]
+        font: BtQmlInterface.fonts[7]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -203,7 +203,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView7.right
-        font: BtQmlInterface.getFonts()[8]
+        font: BtQmlInterface.fonts[8]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
@@ -216,7 +216,7 @@ Item {
         anchors.top: delegate.top
         anchors.bottom: delegate.bottom
         anchors.left: columnView8.right
-        font: BtQmlInterface.getFonts()[9]
+        font: BtQmlInterface.fonts[9]
         width: delegate.textWidth
         onHovered: function(link) { BtQmlInterface.setHoveredLink(link) }
     }
